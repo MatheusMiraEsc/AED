@@ -4,9 +4,6 @@
 using namespace std;
 
 // 10. Ordene o vetor: {9, 7, 5, 3, 1, 2, 4, 6, 8, 0}
-// 11. Pare se já estiver ordenado: {1, 2, ..., 10}
-// 12. Ordem decrescente: {12, 3, 45, 7, 18, 9, 25, 31, 6, 11}
-
 void bubbleSort(int arr[], int tam){
     int temp = 0;
     for(int i = 0; i<tam-1;i++){
@@ -20,6 +17,20 @@ void bubbleSort(int arr[], int tam){
     }
 }
 
+// 11. Pare se já estiver ordenado: {1, 2, ..., 10}
+int pareOrdenado(int arr[], int tam){
+    int temp = 0;
+    for(int i = 0; i<tam-1;i++){
+        for(int j=0; j< tam - i - 1;j++){
+            if(arr[j]>arr[j+1]){
+                return -1;
+            }
+        }
+    }
+    return 1;
+}
+
+// 12. Ordem decrescente: {12, 3, 45, 7, 18, 9, 25, 31, 6, 11}
 void bubbleSortAoContrario(int arr[], int tam){
     int temp = 0;
     for(int i = 0; i<tam-1;i++){
@@ -33,17 +44,6 @@ void bubbleSortAoContrario(int arr[], int tam){
     }
 }
 
-int pareOrdenado(int arr[], int tam){
-    int temp = 0;
-    for(int i = 0; i<tam-1;i++){
-        for(int j=0; j< tam - i - 1;j++){
-            if(arr[j]>arr[j+1]){
-                return -1;
-            }
-        }
-    }
-    return 1;
-}
 
 int main(){
     // Questão 10
